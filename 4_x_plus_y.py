@@ -3,8 +3,6 @@
 import random
 import numpy as np
 
-res = []
-
 x = np.linspace(0, 1, 100)
 y = 2 * x
 Y1, Y2 = np.meshgrid(y, y)
