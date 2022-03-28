@@ -21,7 +21,7 @@ result_expectation = np.zeros(P.shape, dtype=float)
 result_variance = np.zeros(P.shape, dtype=float)
 NUM_EXPERIMENTS = 100
 
-for r in range(len(p)):
+for r in range(len(p)):  # meshgrid could be used instead of these
     for c in range(len(num_jumps)):
         _p = p[r]
         _num_jumps = num_jumps[c]
