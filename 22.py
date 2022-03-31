@@ -15,8 +15,8 @@ X0, X1 = np.meshgrid(np.linspace(-3, 3, 30), np.linspace(-3, 3, 30))  #  this gi
 # b)  https://math.stackexchange.com/questions/84331/does-this-derivation-on-differentiating-the-euclidean-norm-make-sense
 # OBS there are 100 data points, each with x0 and x1
 Y = np.zeros(X0.shape, dtype=float)
-dY_x0 = np.zeros(X0.shape, dtype=float)
-dY_x1 = np.zeros(X0.shape, dtype=float)
+# dY_x0 = np.zeros(X0.shape, dtype=float)
+# dY_x1 = np.zeros(X0.shape, dtype=float)
 Y_norms = np.zeros(X0.shape, dtype=float)
 
 for r in range(Y.shape[0]):
@@ -27,7 +27,9 @@ for r in range(Y.shape[0]):
         dY_x1 = X1[r, c] / np.sqrt(1 + norm_X**2)
         Y_norms[r, c] = np.sqrt(dY_x0**2 + dY_x1**2) / np.sqrt(X0[r, c]**2 + X1[r, c]**2)
 
-
+# L_max = np.max(Y_norms)  # upper bound
+# min = np.min(Y_norms)
+assert(np.min(Y_norms) >= 0 and np.max(Y_norms) <= np.inf)
 
 fig = plt.figure(figsize=(12, 9))
 
