@@ -20,7 +20,7 @@ def gen_data(num_rows, num_cols, type):
         Y = np.zeros(X0.shape, dtype=float)
         for r in range(Y.shape[0]):
             for c in range(Y.shape[1]):
-                b = random.random() * 2
+                # b = random.random() * 2
                 x0 = X0[r, c] + b
                 x1 = X1[r, c] + b
                 Y[r, c] = np.log(np.sum(np.exp([x0, x1])))
@@ -68,7 +68,7 @@ def perform_gradient_descent(W, X, Y, eta, num_iters):
 
 NUM_ROWS = 30
 NUM_COLS = 2
-NUM_ITERS = 160
+NUM_ITERS = 130
 ETA = 0.0005
 W = np.zeros((NUM_ITERS, NUM_COLS))
 W_init = np.full((NUM_COLS,), fill_value=-7.1)  # initial guess
@@ -87,7 +87,7 @@ ax0 = fig.add_subplot(1, 2, 1, projection='3d')
 ax1 = fig.add_subplot(1, 2, 2)
 # ax0.scatter(range(0, NUM_ROWS), Y)
 ax0.plot_surface(X[0], X[1], Y, cmap=cm.coolwarm, linewidth=0, alpha=0.7)
-# ax0.plot_surface(X[0], X[1], Y_hat, cmap=cm.jet, linewidth=0, alpha=0.4)
+ax0.plot_surface(X[0], X[1], Y_hat, cmap=cm.jet, linewidth=0, alpha=0.4)
 # ax1.plot_surface(X[0], X[1], pointwise_losses, cmap=cm.jet, linewidth=0, alpha=0.8)
 ax1.plot(range(0, NUM_ITERS), dL_hist)
 # ax1.set_zlabel('Pointwise losses', fontsize=10)
