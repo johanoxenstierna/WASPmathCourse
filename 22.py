@@ -29,7 +29,7 @@ for r in range(Y.shape[0]):
 
 # L_max = np.max(Y_norms)  # upper bound
 # min = np.min(Y_norms)
-assert(np.min(Y_norms) >= 0 and np.max(Y_norms) <= np.inf)
+assert(np.min(Y_norms) >= 0 and np.max(Y_norms) <= np.inf)  # condition for L-smooth
 
 fig = plt.figure(figsize=(12, 9))
 
